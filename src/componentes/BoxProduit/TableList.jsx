@@ -31,7 +31,10 @@ const TableList = () => {
             libeleProduit={libeleProduit}
             quantiteProduit={quantiteProduit}
             prixUnitaireProduit={prixUnitaireProduit}
+            liste={ListeProduit}
+            produit={produit}
             key={i}
+
           />
         );
       })}

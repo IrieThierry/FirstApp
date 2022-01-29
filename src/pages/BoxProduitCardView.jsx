@@ -1,10 +1,10 @@
-import { TableList } from "../componentes";
+import { CardList } from "../componentes";
 import React from 'react';
 
 const BoxProduitCardView = () => {
     return (
         <div>
-            <TableList />
+            <CardList/>
         </div>
     );
 };

@@ -1,22 +1,23 @@
 import React from "react";
-const CustomListButton = ({quantite, produit}) => {
+import '../styles/styleBoxProduit.css'
+const CustomListButton = (props) => {
 
-  const [first, setfirst] = React.useState(quantite);
+  const [first, setfirst] = React.useState();
 
   return (
-    <div style={style.styleButtonContainer}>
+    <div style={style.styleButtonContainer} className="pt-0">
       <div>
-        <button style={style.button}> - </button>
+        <button style={style.button} className="btn-moins" onClick={props.actionMoins}> - </button>
       </div>
 
       <div>
 
-        <input style={style.input} type="text" value = {quantite} />
+        <input style={style.input} type="text" value = {props.quantite} onChange={props.update}/>
 
       </div>
 
       <div>
-        <button style={style.button}> + </button>
+        <button  className="btn-plus" style={style.button} onClick={props.actionPlus}> + </button>
       </div>
     </div>
   );
@@ -25,8 +26,9 @@ const CustomListButton = ({quantite, produit}) => {
 
 const style = {
   styleButtonContainer: {
-      width:"150px",
-    border:'1px solid gray',
+    width:"150px",
+    height:"40px",
+    border:'1px solid #ccc',
     display: "flex",
     alignItems: "center",
     flexDirection: "row",
@@ -34,24 +36,29 @@ const style = {
     overflow:'hidden',
     backgroundColor:"white"
   },
+ 
   input: {
-      borderRadius:"6px",
+    borderRadius:"6px",
     padding:"7px",
     border: "1px solid gray",
     width:'100%',
     border:'none',
     display: "inline-block",
     outline:'none',
-    textAlign:'center'
+    textAlign:'center',
+    fontWeight:"500",
+    fontSize:"20px"
   },
   button:{
       border:'none',
       outline:'none',
-      color:'orange',
-      fontSize:'20px',
-      width:"40px",
-      height:"40px",
-      backgroundColor:"#fff"
+      color:'white',
+      fontSize:'42px',
+      width:"50px",
+      height:"100%",
+      backgroundColor:"#ccc",
+      fontWeight:"500"
+
   }
 };
 

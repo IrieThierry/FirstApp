@@ -33,3 +33,16 @@ th{
     background-color: #e9e8e8;
     transition: .5s;
 }
+
+/*-------- boutons -------*/
+
+.btn-plus:hover{
+    background-color: rgb(182, 240, 182) !important;
+    color: green !important;
+}
+
+.btn-moins:hover{
+    background-color: rgb(245, 197, 197) !important;
+    color: red !important;
+    
+}
