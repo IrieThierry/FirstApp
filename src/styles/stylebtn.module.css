@@ -1,0 +1,14 @@
+.btnplus:hover{
+    background-color: rgb(182, 240, 182) !important;
+    color: green !important;
+}
+
+.btnmoins:hover{
+    background-color: rgb(245, 197, 197) !important;
+    color: red !important;
+    
+}
+
+.btncart:hover{
+    opacity: 0.8;
+}

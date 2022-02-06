@@ -1,10 +1,10 @@
 import { TableList } from "../componentes";
 import React from 'react';
 
-const BoxProduitTableView = () => {
+const BoxProduitTableView = (props) => {
     return (
         <div>
-            <TableList />
+            <TableList color = {props.color} themeColor={props.colorTheme} modifierListeSelection={props.modifierListeSelection} modifierPanier={props.modifierPanier} {...props} />
         </div>
     );
 };

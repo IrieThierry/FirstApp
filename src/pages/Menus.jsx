@@ -29,7 +29,7 @@ const Menus = (props) => {
         <div>
             
             <Menu
-            style={{ width: 256, backgroundColor: props.Themes }}
+            style={{ width: 200, backgroundColor: props.Themes }}
             mode={mode}
             >
                 <Menu.Item style={{color:"white"}} key="1" icon={<MailOutlined />}>

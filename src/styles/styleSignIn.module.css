@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .champs {
+    border: none;
+    border-bottom: 1px solid darkgray;
+    border-radius: 0;
+    background: #fbf8f8;
+    outline: 0;
+    padding-right: 60px;
+  }
+  
+  .champs:focus {
+    transform: scale(1,1);
+    transition: 0.1s linear;
+    border-bottom: 1px solid var(--blue);
+    background: #fbf8f8;
+  }
+  
+  .logo {
+    height: 20%;
+  }
+  
+  
+  
+  input::-webkit-input-placeholder {
+    color: #CCCCCC;
+    position: relative;
+    padding-left: 0;
+    -webkit-transition: padding 0.5s;
+    transition: padding 0.5s;
+  }
+  
+  input:focus::-webkit-input-placeholder {
+    font-size: 12px;
+    transform: translateX(90px);
+    transition: 0.1s;
+  }
+  
+  .close:hover {
+    cursor: pointer;
+  }
+  
+  

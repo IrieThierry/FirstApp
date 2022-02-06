@@ -1,6 +1,6 @@
 import React from 'react';
 import { CustomButton } from '../componentes'
-import '../styles/style.css'
+import styles from '../styles/style.module.css'
 import logo from '../image/logo.png'
 import { useState } from 'react';
 
@@ -16,18 +16,18 @@ const Login = () => {
 
     return (
         <div>
-            <main>
-                <div className='form-container'>
-                    <div className='form-left'>
+            <main style={{}}>
+                <div className={styles.formcontainer}>
+                    <div className={styles.formleft}>
                         <div>
                             <h1 style={{color:"#fff"}}>Login</h1>
                             <h3 style={{color:"#d0ccd5"}}>Renseignez ce formulaire pour accéder à votre compte</h3>
                         </div>
-                        <div className='logo'>
+                        <div className={styles.logo}>
                             <img src={logo}/>
                         </div>
                     </div>
-                    <div className='form-right'>
+                    <div className={styles.formright}>
                         <form>
                             <div>
                                 <input type="text" name="login" id="" placeholder='Login' value={login} onChange={(e)=> setLogin(e.target.value)}/>

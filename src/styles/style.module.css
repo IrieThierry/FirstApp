@@ -12,17 +12,17 @@ main{
    align-items: center;
    background: rgb(6,6,6,0.5);
 }
-.form-container{
+.formcontainer{
     width: 50%;
-    height: 80%;
+    height: '100%';
     display: flex;
     flex-direction: row;
 }
-.form-right{
+.formright{
     width: 60%;
     height: 100%;
 }
-.form-right > form{
+.formright > form{
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -35,21 +35,43 @@ form div input{
     border: 0;
     border-bottom: 1px solid gray;
     outline: none;
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 15px;
     background-color: white ;
+    font-size: '24px';
     
 }
+
+/* Animation */
+
+input::-webkit-input-placeholder {
+    color: #CCCCCC;
+    position: relative;
+    padding-left: 0;
+    -webkit-transition: padding 0.5s;
+    transition: padding 0.5s;
+  }
+  
+  input:focus::-webkit-input-placeholder {
+    font-size: 12px;
+    transform: translateX(90px);
+    transition: 0.1s;
+  }
+  
+  .close:hover {
+    cursor: pointer;
+  }
+  
+
 
 input[type="checkbox"]{
     width: 15px;
 }
 
-.form-left{
+.formleft{
     background-color: #007bff;
     padding: 1rem;
     width: 40%;
-    height: 100%;
     color:gray;
     display: flex;
     flex-direction: column;

@@ -1,5 +1,6 @@
 import React from "react";
-import '../styles/styleBoxProduit.css'
+// import styles from '../styles/stylebutton.module.css'
+import styles from '../styles/stylebtn.module.css'
 const CustomListButton = (props) => {
 
   const [first, setfirst] = React.useState();
@@ -7,7 +8,7 @@ const CustomListButton = (props) => {
   return (
     <div style={style.styleButtonContainer} className="pt-0">
       <div>
-        <button style={style.button} className="btn-moins" onClick={props.actionMoins}> - </button>
+        <button style={style.button} className={styles.btnmoins} onClick={props.actionMoins}> - </button>
       </div>
 
       <div>
@@ -17,7 +18,7 @@ const CustomListButton = (props) => {
       </div>
 
       <div>
-        <button  className="btn-plus" style={style.button} onClick={props.actionPlus}> + </button>
+        <button  className={styles.btnplus} style={style.button} onClick={props.actionPlus}> + </button>
       </div>
     </div>
   );

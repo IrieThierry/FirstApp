@@ -41,13 +41,13 @@ export const ListeProduit = [
                         codeProduit: 711004, 
                         libeleProduit: 'Yaout à boire Milkana pocket  saveur banane, ananas, gimgembre 24 x 250g ', 
                         quantiteProduit: 1, 
-                        prixUnitaireProduit: 299000 
+                        prixUnitaireProduit: 4500 
                     },
                     { 
                         idProduit: 7,
                         codeProduit: 711004, 
                         libeleProduit: 'Yaout à boire Milkana pocket  saveur banane, ananas, gimgembre 24 x 250g ', 
                         quantiteProduit: 1, 
-                        prixUnitaireProduit: 299000 
+                        prixUnitaireProduit: 1000 
                     }
                 ]
