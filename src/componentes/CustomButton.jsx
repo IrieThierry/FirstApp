@@ -11,7 +11,8 @@ const CustomButton = (props) => {
         backgroundColor:props.color,
         color:'white',
         width:'100%',
-        marginTop:'50px'
+        marginTop:'50px',
+        outline:'none'
     }
 
     return (

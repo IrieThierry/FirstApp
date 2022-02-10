@@ -45,7 +45,7 @@ const Container = () => {
   return (
     <Layout className="col-md-12 d-flex flex-wrap pl-0 pr-0">
       {/*----------- DRAWER LISTE DE COMMANDE ---------- */}
-      {visible && <Drawers style={{transition:'0.5s '}}  nbreProduit={setCount} commande = {panierPartager} visible={visible} setVisible={setVisible} size={size}/>}
+      {visible && <Drawers style={{transition:'0.5s '}} nbreProduit={setCount} commande = {panierPartager} visible={visible} setVisible={setVisible} size={size}/>}
       {/*-------------- MESSAGE ------------- */}
       {isMessage && message.info("Vous avez deja ajouté ce produit au panier")}
 
@@ -139,6 +139,7 @@ const Container = () => {
           backgroundColor: hTheme.background,
           color: hTheme.color,
           textAlign: "center",
+          
         }}
       >
         Ant Design ©2018 Created by Ant UED
