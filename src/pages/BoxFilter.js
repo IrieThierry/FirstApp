@@ -1,9 +1,7 @@
 import Checkbox from 'antd/lib/checkbox/Checkbox';
-import React, { useState } from 'react';
-import { ListeProduit } from '../donnees/ListeProduit';
+import React from 'react';
 
 const BoxFilter = () => {
-    const [Liste, setListe] = useState([{nom:'irie',prenom:'thierry'}, {nom:'irie',prenom:'thierry'}])
     function onchange(e) {
         console.log(`checked = ${e.target.checked}` )
     }

@@ -1,8 +1,6 @@
 
-import {CustomButton} from './componentes'
-import Inscription from './pages/Inscription'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import {Login, SingIn, CardProduit, Container, BoxProduitTableView, BoxProduitCardView, Error, Commande, MeilleurProduit, NouveauProduit, Accueil, Parametre} from './pages'
+import {Login, CardProduit, Container, Error, Commande, MeilleurProduit, NouveauProduit, Accueil, Parametre} from './pages'
 // import CardProduit from './pages/CardProduit';
 
 function App() {

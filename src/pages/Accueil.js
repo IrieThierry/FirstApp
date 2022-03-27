@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
+import { DataView } from 'primereact/dataview';
 import { Rating } from 'primereact/rating';
 import { Button } from 'primereact/button';
 import './DataViewDemo.css';
-import { Badge, Card } from 'antd';
+import { Badge } from 'antd';
 import { useSelector,useDispatch } from 'react-redux';
 import { setProducts } from '../store/actions/product';
 
@@ -13,6 +13,7 @@ const Accueil = () => {
 
     const dispatch = useDispatch();
     const produits = useSelector(state => state.produits.products);
+
 
 
     const [products, setProductss] = useState(null);
@@ -37,7 +38,7 @@ const Accueil = () => {
 
     useEffect(() => {
         dispatch(setProducts(data));
-    }, [dispatch, data]);
+    }, [data]);
 
     useEffect(() => {
         if (isMounted.current) {
@@ -76,7 +77,7 @@ const Accueil = () => {
         }, 1000);
     }
 
-    const renderGridItem = (data) => {
+    const renderGridItem = (produits) => {
         return (
             
             <div className="col-4 md:col-4">
@@ -85,19 +86,19 @@ const Accueil = () => {
                     <div className="product-grid-item-top">
                         <div>
                             <i className="pi pi-tag product-category-icon"></i>
-                            <span className="product-category">{data.category}</span>
+                            <span className="product-category">{produits.category}</span>
                         </div>
-                        <span className={`product-badge status-${data.inventoryStatus.toLowerCase()}`}>{data.inventoryStatus}</span>
+                        <span className={`product-badge status-${produits.inventoryStatus.toLowerCase()}`}>{produits.inventoryStatus}</span>
                     </div>
                     <div className="product-grid-item-content">
-                    <img src={`images/product/${data.image}`} onError={(e) => e.target.src=''} alt={data.name} />
-                        <div className="product-name">{data.name}</div>
-                        <div className="product-description">{data.description}</div>
-                        <Rating value={data.rating} readOnly cancel={false}></Rating>
+                    <img src={`images/product/${produits.image}`} onError={(e) => e.target.src=''} alt={produits.name} />
+                        <div className="product-name">{produits.name}</div>
+                        <div className="product-description">{produits.description}</div>
+                        <Rating value={produits.rating} readOnly cancel={false}></Rating>
                     </div>
                     <div className="product-grid-item-bottom">
-                        <span className="product-price">${data.price}</span>
-                        <Button icon="pi pi-shopping-cart" label="Add to Cart" disabled={data.inventoryStatus === 'OUTOFSTOCK'}></Button>
+                        <span className="product-price">${produits.price}</span>
+                        <Button icon="pi pi-shopping-cart" label="Add to Cart" disabled={produits.inventoryStatus === 'OUTOFSTOCK'}></Button>
                     </div>
                 </div>
             </Badge.Ribbon>

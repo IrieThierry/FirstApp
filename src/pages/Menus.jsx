@@ -1,29 +1,20 @@
 import React from 'react';
-import { Menu, Switch} from 'antd';
+import { Menu} from 'antd';
 import {Link} from 'react-router-dom'
 import {
   MailOutlined,
-  CalendarOutlined,
   AppstoreOutlined,
   SettingOutlined,
-  LinkOutlined,
 } from '@ant-design/icons';
 
-
 const Menus = (props) => {
-    
     const { SubMenu } = Menu;
-
-    const [mode, setMode] = React.useState('inline');
-    const [theme, setTheme] = React.useState('light');
-
-
     return (
         <div>
             
             <Menu
             style={{ width: '100%', backgroundColor: props.Themes }}
-            mode={mode}
+            mode="inline"
             >
                <Link to='/Accueil'> <Menu.Item icon={<MailOutlined />}>
                     Accueil
