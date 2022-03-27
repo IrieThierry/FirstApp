@@ -4,16 +4,18 @@ import { Rating } from 'primereact/rating';
 import { Button } from 'primereact/button';
 import './DataViewDemo.css';
 import { Badge, Card } from 'antd';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { setProducts } from '../store/actions/product';
 
 
 
 const Accueil = () => {
 
-    const produits = useSelector(item=>item.product)
-    console.log(produits)
+    const dispatch = useDispatch();
+    const produits = useSelector(state => state.produits.products);
 
-    const [products, setProducts] = useState(null);
+
+    const [products, setProductss] = useState(null);
     const [layout, setLayout] = useState('grid');
     const [loading, setLoading] = useState(true);
     const [first, setFirst] = useState(0);
@@ -34,6 +36,10 @@ const Accueil = () => {
     ])  
 
     useEffect(() => {
+        dispatch(setProducts(data));
+    }, [dispatch, data]);
+
+    useEffect(() => {
         if (isMounted.current) {
             setTimeout(() => {
                 setLoading(false);
@@ -47,7 +53,7 @@ const Accueil = () => {
 
             datasource.current = data;
             setTotalRecords(data.length);
-            setProducts(datasource.current.slice(0, rows.current));
+            setProductss(datasource.current.slice(0, rows.current));
             setLoading(false);
 
           

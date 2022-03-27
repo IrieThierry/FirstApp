@@ -1,32 +1,18 @@
-import { GET_PRODUCT } from '../constante'
+import { GET_PRODUCT,SET_PRODUCT } from '../constante'
 
 const initialState ={
-    products : [{id:'1', sourceId:'571001', fullName:'Vache qui rit', quantite:'25', prixVenteTTC:'21000'}, 
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit', quantite:'25', prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit', quantite:'25', prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit', quantite:'25', prixVenteTTC:'21000'}, 
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit', quantite:'25', prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit', quantite:'25', prixVenteTTC:'21000'}, 
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit', quantite:'25', prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'}, 
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'}, 
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'}, 
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'},
-    {id:'1', sourceId:'571001', fullName:'Vache qui rit',quantite:'25',  prixVenteTTC:'21000'}
-    ]
+    products : []
 } 
 
 const productListReducer =(state= initialState, action)=>{
         switch (action.type) {
             case GET_PRODUCT:
                 return state
-             
+            case SET_PRODUCT:
+                return {
+                    ...state,
+                    products: action.payload
+                }
             default:
                 return state
         }
