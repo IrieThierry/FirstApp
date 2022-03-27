@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Container.css";
-import { Menu, Switch, message, Badge, Dropdown, Avatar } from "antd";
+import { Menu, Badge, Dropdown, Avatar } from "antd";
 import {
-  AppstoreOutlined,
-  OrderedListOutlined,
   ShoppingOutlined,
   PlusOutlined,
   LikeOutlined,
@@ -13,10 +11,9 @@ import {
   UnorderedListOutlined,
   PoweroffOutlined,
 } from "@ant-design/icons";
-import { BoxProduitTableView, BoxProduitCardView, BoxFilter } from "../pages";
+import { BoxFilter } from "../pages";
 import "../styles/boostrap.css";
 import Menus from "./Menus";
-import Drawers from "./Drawers";
 import { Link } from "react-router-dom";
 import logo from "../image/logo.png";
 
@@ -24,10 +21,7 @@ const Container = (props) => {
   // const {Footer } = div;
   // const [hTheme, setHTheme] = useState({background:"#293b8e",color:"white"});
 
-  const [panierPartager, setPanierPartager] = useState([]);
   const [count, setCount] = useState(0);
-  const [isMessage, setIsMessage] = useState(false);
-  const [visible, setVisible] = useState(false);
   const [size, setSize] = useState();
   const [showLayout, setShowLayout] = useState(false);
 
@@ -37,7 +31,6 @@ const Container = (props) => {
 
   const showLargeDrawer = () => {
     setSize("large");
-    setVisible(true);
   };
 
   const menu = (
@@ -142,7 +135,7 @@ const Container = (props) => {
                   style={{ textDecoration: "none", width: "8%" }}
                   className="p-0"
                 >
-                  <img src={logo} style={{ width: "100%" }} />
+                  <img alt="img"  src={logo} style={{ width: "100%" }} />
                 </div>
                 <div
                   style={{

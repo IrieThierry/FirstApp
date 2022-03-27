@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
     AppstoreOutlined,
     OrderedListOutlined,
-    ShoppingOutlined,
   } from "@ant-design/icons";
 
 import {BoxProduitTableView, BoxProduitCardView} from '../pages'

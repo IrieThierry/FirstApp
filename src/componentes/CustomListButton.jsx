@@ -3,7 +3,6 @@ import React from "react";
 import styles from '../styles/stylebtn.module.css'
 const CustomListButton = (props) => {
 
-  const [first, setfirst] = React.useState();
 
   return (
     <div style={style.styleButtonContainer} className="pt-0">

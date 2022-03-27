@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
+import { DataView } from 'primereact/dataview';
 import { Rating } from 'primereact/rating';
 import { Button } from 'primereact/button';
 import './DataViewDemo.css';

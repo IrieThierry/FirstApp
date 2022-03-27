@@ -1,9 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import TableListItem from "./TableListItem";
-import { ListeProduit } from "../../donnees/ListeProduit";
 // import '../../styles/styleBoxProduit.css'
 import styles from '../../styles/styletable.module.css'
-import axios from 'axios'
 
 const TableList = (props) => {
 

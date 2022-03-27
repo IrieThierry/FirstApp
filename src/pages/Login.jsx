@@ -24,7 +24,7 @@ const Login = () => {
                             <h3 style={{color:"#d0ccd5"}}>Renseignez ce formulaire pour accéder à votre compte</h3>
                         </div>
                         <div className={styles.logo}>
-                            <img src={logo}/>
+                            <img alt="img" src={logo}/>
                         </div>
                     </div>
                     <div className={styles.formright}>
