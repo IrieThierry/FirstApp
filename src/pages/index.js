@@ -2,8 +2,16 @@ import Login from './Login'
 import SingIn from './SingIn'
 import BoxProduitTableView  from './BoxProduitTableView'
 import BoxProduitCardView from './BoxProduitCardView'
+import CardProduit from './CardProduit'
 import Container from './Container'
 import Menus from './Menus'
 import Messages from './Messages'
 import Error from './Error'
- export {Login, SingIn, BoxProduitTableView, BoxProduitCardView, Container, Menus, Messages, Error}
+import Commande from './Commande'
+import NouveauProduit from './NouveauProduit'
+import Parametre from './Parametre'
+import MeilleurProduit from './MeilleurProduit'
+import Accueil from './Accueil'
+import BoxFilter from './BoxFilter'
+
+export {Login, SingIn, NouveauProduit,CardProduit, BoxProduitTableView, BoxProduitCardView, Container, Menus, Messages, Commande, Parametre,BoxFilter, MeilleurProduit, Accueil, Error}

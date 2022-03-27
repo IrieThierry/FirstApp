@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, Switch} from 'antd';
+import {Link} from 'react-router-dom'
 import {
   MailOutlined,
   CalendarOutlined,
@@ -16,47 +17,32 @@ const Menus = (props) => {
     const [mode, setMode] = React.useState('inline');
     const [theme, setTheme] = React.useState('light');
 
-    const changeMode = value => {
-    setMode(value ? 'vertical' : 'inline');
-    };
-
-    const changeTheme = value => {
-    setTheme(value ? 'dark' : 'light');
-
-    };
 
     return (
         <div>
             
             <Menu
-            style={{ width: 200, backgroundColor: props.Themes }}
+            style={{ width: '100%', backgroundColor: props.Themes }}
             mode={mode}
             >
-                <Menu.Item style={{color:"white"}} key="1" icon={<MailOutlined />}>
-                    Navigation One
-                </Menu.Item>
-                <Menu.Item style={{color:"white"}} key="2" icon={<CalendarOutlined />}>
-                    Navigation Two
-                </Menu.Item>
-                <SubMenu style={{color:"white"}} key="sub1" icon={<AppstoreOutlined />} title="Navigation Two">
-                    <Menu.Item key="3">Option 3</Menu.Item>
-                    <Menu.Item key="4">Option 4</Menu.Item>
-                    <SubMenu key="sub1-2" title="Submenu">
-                        <Menu.Item key="5">Option 5</Menu.Item>
-                        <Menu.Item key="6">Option 6</Menu.Item>
+               <Link to='/Accueil'> <Menu.Item icon={<MailOutlined />}>
+                    Accueil
+                </Menu.Item></Link>
+               
+                <SubMenu style={{color:"white"}} key="sub1" icon={<AppstoreOutlined />} title="Mon Profile">
+                    <Menu.Item key="3">Mes Infos</Menu.Item>
+                    <Menu.Item key="4">Modifier Mot de Passe</Menu.Item>
+                   
+                </SubMenu>
+                <SubMenu style={{color:"white"}} key="sub2" icon={<SettingOutlined />} title="Parametre">
+                    <SubMenu key="sub1-2" title="Theme">
+                            <Menu.Item key="5">Option 5</Menu.Item>
+                            <Menu.Item key="6">Option 6</Menu.Item>
                     </SubMenu>
-                </SubMenu>
-                <SubMenu style={{color:"white"}} key="sub2" icon={<SettingOutlined />} title="Navigation Three">
-                    <Menu.Item key="7">Option 7</Menu.Item>
-                    <Menu.Item key="8">Option 8</Menu.Item>
-                    <Menu.Item key="9">Option 9</Menu.Item>
                     <Menu.Item key="10">Option 10</Menu.Item>
+                    
                 </SubMenu>
-                <Menu.Item key="link" icon={<LinkOutlined />}>
-                    <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                    Ant Design
-                    </a>
-                </Menu.Item>
+               
             </Menu>
         </div>
     );

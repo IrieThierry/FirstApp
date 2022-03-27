@@ -1,61 +1,64 @@
 import React ,{useState} from "react";
 import { Card } from "antd";
-import avatar from "../../image/avatar.png";
 import { CustomCardButton, Cart } from "../../componentes";
 
 const CardList = (props) => {
-  const { Meta } = Card;
 
   const [listesProd, setListes] = useState(props.listes);
   const [panier, setPanier] = useState([])
 
 
   const updateAdd = (element) => {
+    console.log(element.quantiteProd + 1)
     const produitSelect = listesProd.filter(
-      (x) => x.idProduit == element.idProduit
+      (x) => x.id == element.id
     )[0];
-    produitSelect.quantiteProduit++;
-    const liste = listesProd.filter((y) => y.idProduit !== element.idProduit);
+    produitSelect.quantiteProd++;
+    const liste = listesProd.filter((y) => y.id !== element.id);
     liste.push(produitSelect);
     setListes(liste);
   };
 
   const updateDel = (element) => {
     const produitSelect = listesProd.filter(
-      (x) => x.idProduit === element.idProduit
+      (x) => x.id === element.id
     )[0];
-    produitSelect.quantiteProduit--;
-    const liste = listesProd.filter((y) => y.idProduit !== element.idProduit);
+    produitSelect.quantiteProd--;
+    const liste = listesProd.filter((y) => y.id !== element.id);
     liste.push(produitSelect);
     setListes(liste);
   };
 
   const updateInput = (element, newVal) => {
     const produitSelect = listesProd.filter(
-      (x) => x.idProduit == element.idProduit
+      (x) => x.id == element.id
     )[0];
-    const liste = listesProd.filter((y) => y.idProduit !== element.idProduit);
-    produitSelect.quantiteProduit = newVal;
+    const liste = listesProd.filter((y) => y.id !== element.id);
+    produitSelect.quantiteProd = newVal;
     liste.push(produitSelect);
     setListes(liste);
   };
 
+  
   const elementSelectionne =(p)=>{
-    const produitSelect = listesProd.filter(x=> x.idProduit === p.idProduit)[0]
+    const produitSelect = listesProd.filter(x=> x.id === p.id)[0]
     console.log("panier 1",panier);
     // panier.push(p)
     // console.log("panier 2",panier);
-    console.log(props)
+    // console.log(props)
     // console.log( typeof(props.panierPartager))
+    console.log(produitSelect)
+    
     let val = props.currentPanier?props.currentPanier:[]
 
-    if(produitSelect.quantiteProduit !=0){
-      let trouve = val.filter(element=> element.idProduit == produitSelect.idProduit)[0]
+    if(produitSelect.quantiteProd !=0){
+      let trouve = val.filter(element=> element.id == produitSelect.id)[0]
       // console.log("val 1",val);
       trouve && props.message(true)
       !trouve && val.push(produitSelect)
+      console.log(val)
       props.modifierPanier(val)
-      props.nbreProduit(val.length);
+      // props.nbreProduit(val.length);
     }
     else console.log('ce produit ');
 
@@ -89,10 +92,10 @@ const CardList = (props) => {
         <CustomCardButton
           actionAdd={() => updateAdd(props.produit)}
           actionDel={() =>
-            props.produit.quantiteProduit >= 1 && updateDel(props.produit)
+            props.produit.quantiteProd >= 1 && updateDel(props.produit)
           }
           actionInput={(e) => updateInput(props.produit, e.target.value)}
-          quantite={props.produit.quantiteProduit}
+          quantite={props.produit.quantiteProd}
         />
       </div>
       <div>

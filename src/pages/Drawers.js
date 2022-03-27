@@ -7,7 +7,7 @@ function Drawers(props){
    const [commande, setCommande] = useState(props.commande)
     props.nbreProduit(commande.length)
 
-   const valeurProduit = commande.reduce((a,b)=> a + ( b.prixUnitaireProduit * b.quantiteProduit),0)
+   const valeurProduit = commande.reduce((a,b)=> a + ( b.prixVenteTTC * b.quantiteProd),0)
     const onClose = () => {
     props.setVisible(false);
     };
@@ -51,11 +51,11 @@ function Drawers(props){
                     </thead>
                     {commande.map((produit,i)=>{
 
-                        const {idProduit,codeProduit,libeleProduit,quantiteProduit,prixUnitaireProduit } = produit;
+                        const {id, code, fullName,quantiteProd,prixVenteTTC } = produit;
                         return(  <tr>
-                                    <td>{libeleProduit}</td>
-                                    <td>{quantiteProduit}</td>
-                                    <td>{quantiteProduit * prixUnitaireProduit}</td>
+                                    <td>{fullName}</td>
+                                    <td>{quantiteProd}</td>
+                                    <td>{quantiteProd * prixVenteTTC}</td>
                                     <td>
                                         <button className={styles.btnmoins} type='button' style={btnStyle.buttonSup} onClick={()=> supprimer(i) }  >SUPPRIMER</button>
                                     </td>

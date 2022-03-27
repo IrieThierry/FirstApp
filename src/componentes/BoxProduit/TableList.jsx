@@ -7,10 +7,10 @@ import axios from 'axios'
 
 const TableList = (props) => {
 
-  const [data, setData] = useState([])
-  useEffect(() => {
-    axios.get('http://10.112.0.100:8081/api/v1/produit').then((result)=> setData(result.data))
-}, []);
+  const [data, setData] = useState([{id:'1', sourceId:'571001', fullName:'Vache qui rit', prixVenteTTC:'21000'}])
+//   useEffect(() => {
+//     axios.get('http://10.112.0.100:8081/api/v1/produit').then((result)=> setData(result.data))
+// }, []);
 
   return (
       <div id = "liste-produit">
