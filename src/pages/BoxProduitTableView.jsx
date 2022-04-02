@@ -1,5 +1,5 @@
 // import { TableList } from "../componentes";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import "primereact/resources/themes/lara-light-indigo/theme.css"; //theme
@@ -9,33 +9,35 @@ import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 import './DataViewDemo.css';
 import { Button } from 'primereact/button';
-
-
 import axios from "axios";
+
+import { useSelector, useDispatch } from 'react-redux';
+import { setProducts } from '../store/actions/product';
+import { addToCart } from '../store/actions/cart';
+
+
 
 
 const BoxProduitTableView = (props) => {
+
+  // const dispatch = useDispatch()
+  // const productsListe = useSelector(state=> state.product.products)
 
   const [data, setData] = useState([{ id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
   { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
   { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
   { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
   { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' },
-  { id: '1', sourceId: '571001', fullName: 'Vache qui rit', quantite: '25', prixVenteTTC: '21000' }
+ 
   ])
 
+  // useEffect(() => {
+    
+  //     dispatch(setProducts(data))
+  
+  // }, [])
+
+  
   // useEffect(() => {
   //   axios.get('http://10.112.0.100:8081/api/v1/produit').then((result)=> setData(result.data))
   // }, []);

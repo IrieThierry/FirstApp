@@ -6,11 +6,6 @@ export const getProduct = () => {
     }
 }
 
-/**
- * 
- * @param {object[]} products 
- * @returns Array
- */
 export const setProducts = (products) => {
     return {
         type: SET_PRODUCT,

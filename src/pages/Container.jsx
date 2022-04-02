@@ -17,7 +17,12 @@ import Menus from "./Menus";
 import { Link } from "react-router-dom";
 import logo from "../image/logo.png";
 
+import {useSelector} from 'react-redux'
+
+
 const Container = (props) => {
+  const commande = useSelector(state => state.cart.cart);
+
   // const {Footer } = div;
   // const [hTheme, setHTheme] = useState({background:"#293b8e",color:"white"});
 
@@ -108,7 +113,10 @@ const Container = (props) => {
               className="col-md-12"
               style={{ display: "flex", justifyContent: "flex-end" }}
             >
-              <Badge count={count}>
+
+             {/* panier */}
+
+              <Badge count={commande.length}>
                 <Link to="/Commande">
                   {" "}
                   <ShoppingOutlined
