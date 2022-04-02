@@ -1,21 +1,21 @@
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import {Login, CardProduit, Container, Error, Commande, MeilleurProduit, NouveauProduit, Accueil, Parametre} from './pages'
+import {Login, Container, Error, Commande, MeilleurProduit, NouveauProduit, Parametre, BoxProduitCardView} from './pages'
 // import CardProduit from './pages/CardProduit';
+import Test from './pages/Test'
 
 function App() {
 
   return (
     <div className="App">
-    <BrowserRouter>
+     <BrowserRouter>
            
       <Container>
           <Routes>
           <Route path="/" exact element={<Login/>}/>
 
               <Route path="/Commande" exact element={<Commande/>}/>
-              <Route path='/Accueil' exact element={<Accueil />} />
-              <Route path='/produit' exact element={<CardProduit/>} />
+              <Route path='/produit' exact element={<BoxProduitCardView/>} />
               <Route path='/noveauProduit' exact element={<NouveauProduit/>} />
               <Route path='/parametre' exact element={<Parametre/>} />
               <Route path='/meilleurProduit' exact element={<MeilleurProduit />} />
@@ -23,7 +23,8 @@ function App() {
           </Routes>
       </Container>
 
-    </BrowserRouter>       
+    </BrowserRouter>        
+    {/* <Test/> */}
       {/* <Login/> */}
       {/* <SingIn/> */}
       {/* <Inscription/> */}

@@ -1,23 +1,25 @@
-import React from "react";
+import React , {useState }from "react";
 // import styles from '../styles/stylebutton.module.css'
 import styles from '../styles/stylebtn.module.css'
 const CustomListButton = (props) => {
+
+  const [quantiteProduit, setquantiteProduit] = useState(props.quantite)
 
 
   return (
     <div style={style.styleButtonContainer} className="pt-0">
       <div>
-        <button style={style.button} className={styles.btnmoins} onClick={props.actionMoins}> - </button>
+        <button style={style.button} className={styles.btnmoins} onClick={()=> setquantiteProduit(quantiteProduit - 1)}> - </button>
       </div>
 
       <div>
 
-        <input style={style.input} type="text" value = {props.quantite} onChange={props.update}/>
+        <input style={style.input} type="text" value = {quantiteProduit} onChange={(e)=> setquantiteProduit(e.target.value)}/>
 
       </div>
 
       <div>
-        <button  className={styles.btnplus} style={style.button} onClick={props.actionPlus}> + </button>
+        <button  className={styles.btnplus} style={style.button} onClick={()=> setquantiteProduit(quantiteProduit + 1)}> + </button>
       </div>
     </div>
   );
