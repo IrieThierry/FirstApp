@@ -1,15 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DeleteToCart } from "../store/actions/cart";
 import { DeleteOutlined } from "@ant-design/icons";
 import { Button, notification } from "antd";
 import { SmileOutlined } from "@ant-design/icons";
-import { CustomListButton } from '../componentes'
+import { CustomListButton } from "../componentes";
 
 const Commande = () => {
-
-
   const commande = useSelector((state) => state.cart.cart);
+
+  useEffect(() => {
+    console.log(commande)
+  }, [commande]);
+
   const dispatch = useDispatch();
   console.log(commande.length);
 
@@ -27,6 +30,16 @@ const Commande = () => {
       icon: <SmileOutlined style={{ color: "red" }} />,
     });
   };
+
+  const addition_product_price = () => {
+     commande.map(item =>{
+       const price = item.price
+
+      })
+    .reduce((acc, b)=> acc + b)
+    
+  };
+console.log(addition_product_price());
 
   return (
     <div>
@@ -46,43 +59,58 @@ const Commande = () => {
                 </tr>
               </thead>
               <tbody>
-                {commande.map((item) => (
-                    item.quantiteProduit = 1,
-                  <tr key={item.id}>
-                    <td>{item.name}</td>
-                    <td> <CustomListButton quantite = {item.quantiteProduit}/></td>
-                    <td>{item.price}</td>
-                    <td>
-                      <button
-                        type="button"
-                        title="Supprimer"
-                        style={{
-                          border: "none",
-                          background: "none",
-                          outline: "none",
-                          fontSize:"20px"
-                        }}
-                        onClick={() => dispatch(delete_Product_to_Cart(item))}
-                      >
-                        <DeleteOutlined
-                          style={{ color: "red" }}
-                          onClick={() => openNotification(item.name)}
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
+                {commande.map(
+                  (item) => (
+                    (item.quantiteProduit = 1),
+                    (
+                      <tr key={item.id}>
+                        <td>{item.name}</td>
+                        <td>
+                          {" "}
+                          <CustomListButton quantite={item.quantiteProduit} />
+                        </td>
+                        <td>{item.price}</td>
+                        <td>
+                          <button
+                            type="button"
+                            title="Supprimer"
+                            style={{
+                              border: "none",
+                              background: "none",
+                              outline: "none",
+                              fontSize: "20px",
+                            }}
+                            onClick={() =>
+                              dispatch(delete_Product_to_Cart(item))
+                            }
+                          >
+                            <DeleteOutlined
+                              style={{ color: "red" }}
+                              onClick={() => openNotification(item.name)}
+                            />
+                          </button>
+                        </td>
+                      </tr>
+                    )
+                  )
+                )}
               </tbody>
+              <tfoot>
+                <tr>
+                  <td colSpan="3">Total</td>
+                  <td>{commande.reduce((a, b) => a + b.price, 0)}</td>
+                </tr>
+
+              </tfoot>
             </table>
           </div>
+          
         ) : (
           <div className="card-body">
             <h3>Votre panier est vide</h3>
           </div>
         )}
-        <div className="card-footer">
-          <h5>Valeur de la commande</h5>
-        </div>
+        
       </div>
     </div>
   );
